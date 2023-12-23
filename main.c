@@ -85,6 +85,7 @@ int main() {
 }
 
 // Function to parse factor
+// Function to parse factor
 int parseFactor() {
     Token token = getNextToken();
 
@@ -92,7 +93,8 @@ int parseFactor() {
         return token.value;
     } else if (token.type == VARIABLE) {
         // Assume the variable already has a value
-        return token.value;  // In a real interpreter, you'd need a symbol table
+        // In a real interpreter, you'd need a symbol table
+        return 0;  // For now, returning 0 for simplicity
     } else if (token.type == MINUS) {
         return -parseFactor();
     } else {
@@ -100,6 +102,7 @@ int parseFactor() {
         exit(EXIT_FAILURE);
     }
 }
+
 
 // Function to parse term
 int parseTerm() {
